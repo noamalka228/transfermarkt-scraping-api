@@ -6,4 +6,4 @@ router = APIRouter(tags=["Scraping"])
 @router.post("/start")
 def scrape(url: str = Query(...)):
     data = run_spider(url)  # blocks only this request until spider finishes
-    return {"count": len(data), "items": data}
+    return {"scrape_count": len(data), "items": data}

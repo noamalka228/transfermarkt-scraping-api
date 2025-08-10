@@ -1,11 +1,16 @@
 import scrapy
+# TODO: Make code support both scrapy-cli and API request crawls.
 from footballers.footballers.items import FootballerItem
 
 
 class FootballerSpider(scrapy.Spider):
     name = "footballer"
     allowed_domains = ["transfermarkt.com"]
-    start_urls = ["https://transfermarkt.com/spieler-statistik/wertvollstespieler/marktwertetop"]
+    
+    def __init__(self, start_url, **kwargs):
+        super().__init__(**kwargs)
+        self.start_urls = [start_url]
+
 
     def parse(self, response):
         """
