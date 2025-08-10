@@ -1,5 +1,5 @@
 import scrapy
-from footballers.items import FootballerItem
+from footballers.footballers.items import FootballerItem
 
 
 class FootballerSpider(scrapy.Spider):
