@@ -11,4 +11,4 @@ For exmple, if you want to crawl something:
 However, if you do want to run scrapy commands directly using scrapy's cli, you should change imports that contain footballer.footballer to footballer.
 
 To run the API simply run from project's root:
-`uvicorn app.main:app --reload --app-dir ./src`q
+`uvicorn app.main:app --reload --app-dir ./src`
