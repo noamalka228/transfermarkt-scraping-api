@@ -1,5 +1,9 @@
+from twisted.internet import asyncioreactor
+asyncioreactor.install()
+
 from fastapi import FastAPI
 from app.routes.scraping import router as scraping_router
+
 
 app = FastAPI(title="Footballer Scraper API")
 app.include_router(scraping_router, prefix="/scrape")
