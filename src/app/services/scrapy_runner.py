@@ -13,9 +13,6 @@ items: List[Dict] = []
 
 async def run_spider(start_url: str) -> List[Dict]:
     # connect signal to collect results
-    dispatcher.connect(_item_scraped, signal=signals.item_scraped)
+    dispatcher.connect(lambda item: items.append(dict(item)), signal=signals.item_scraped)
     await runner.crawl(FootballerSpider, start_url=start_url).asFuture(asyncio.get_running_loop())
     return items
-
-def _item_scraped(item):
-    items.append(dict(item))
