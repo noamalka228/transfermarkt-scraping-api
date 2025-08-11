@@ -1,5 +1,6 @@
 # https://transfermarkt.com/spieler-statistik/wertvollstespieler/marktwertetop
 import asyncio
+from fastapi import logger
 from scrapy import signals
 from typing import List, Dict
 from pydispatch import dispatcher
@@ -14,5 +15,8 @@ items: List[Dict] = []
 async def run_spider(start_url: str) -> List[Dict]:
     # connect signal to collect results
     dispatcher.connect(lambda item: items.append(dict(item)), signal=signals.item_scraped)
-    await runner.crawl(FootballerSpider, start_url=start_url).asFuture(asyncio.get_running_loop())
+    logger.logger.info("started crawling data")
+    deferred_data = runner.crawl(FootballerSpider, start_url=start_url)
+    logger.logger.info("started waiting for deferred")
+    await deferred_data.asFuture(asyncio.get_running_loop())
     return items
