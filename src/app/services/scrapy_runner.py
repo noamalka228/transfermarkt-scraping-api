@@ -1,6 +1,5 @@
-# https://transfermarkt.com/spieler-statistik/wertvollstespieler/marktwertetop
 import os
-os.environ.setdefault("SCRAPY_SETTINGS_MODULE", "footballers.settings")
+os.environ.setdefault("SCRAPY_SETTINGS_MODULE", "footballers_scraper.settings")
 import asyncio
 import logging
 from scrapy import signals
