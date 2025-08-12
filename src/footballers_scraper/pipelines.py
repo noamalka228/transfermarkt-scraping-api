@@ -1,7 +1,10 @@
+import logging
 import pymongo
 from hashlib import sha256
 from scrapy.exceptions import DropItem
 from itemadapter import ItemAdapter
+
+logger = logging.getLogger("footballers_scraper")
 
 class MongoPipeline:
     COLLECTION_NAME = "footballer"
@@ -31,6 +34,7 @@ class MongoPipeline:
         else:
             item["_id"] = item_id
             self.db[self.COLLECTION_NAME].insert_one(ItemAdapter(item).asdict())
+            logger.info(f"Saved player {item['name']} in DB.")
             return item
         
     def compute_item_id(self, item):
