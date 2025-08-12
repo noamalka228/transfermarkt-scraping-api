@@ -1,6 +1,5 @@
 import scrapy
 from typing import List
-# TODO: Make code support both scrapy-cli and API request crawls.
 from footballers_scraper.items import FootballerItem
 
 
