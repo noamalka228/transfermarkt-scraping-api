@@ -1,4 +1,6 @@
 # https://transfermarkt.com/spieler-statistik/wertvollstespieler/marktwertetop
+import os
+os.environ.setdefault("SCRAPY_SETTINGS_MODULE", "footballers_scraper.settings")
 import asyncio
 from fastapi import logger
 from scrapy import signals
@@ -6,7 +8,7 @@ from typing import List, Dict
 from pydispatch import dispatcher
 from scrapy.crawler import CrawlerRunner
 from scrapy.utils.project import get_project_settings
-from footballers.footballers.spiders.footballer import FootballerSpider
+from footballers_scraper.spiders.footballer import FootballerSpider
 
 runner = CrawlerRunner(get_project_settings())
 

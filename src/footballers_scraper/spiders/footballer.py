@@ -1,7 +1,7 @@
 import scrapy
 from typing import List
 # TODO: Make code support both scrapy-cli and API request crawls.
-from footballers.footballers.items import FootballerItem
+from footballers_scraper.items import FootballerItem
 
 
 class FootballerSpider(scrapy.Spider):

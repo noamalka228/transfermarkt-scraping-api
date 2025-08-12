@@ -7,11 +7,11 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "footballers"
+BOT_NAME = "footballers_scraper"
 MONGO_URI = "mongodb://localhost:27017"
 MONGO_DATABASE = "footballers"
-SPIDER_MODULES = ["footballers.spiders"]
-NEWSPIDER_MODULE = "footballers.spiders"
+SPIDER_MODULES = ["footballers_scraper.spiders"]
+NEWSPIDER_MODULE = "footballers_scraper.spiders"
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0 Safari/537.36'
 LOG_LEVEL = "INFO"
 ADDONS = {}
@@ -61,7 +61,7 @@ DOWNLOAD_DELAY = 2
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   "footballers.pipelines.MongoPipeline": 300,
+   "footballers_scraper.pipelines.MongoPipeline": 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
