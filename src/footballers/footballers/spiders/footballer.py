@@ -1,16 +1,16 @@
 import scrapy
+from typing import List
 # TODO: Make code support both scrapy-cli and API request crawls.
 from footballers.footballers.items import FootballerItem
 
 
 class FootballerSpider(scrapy.Spider):
-    name = "footballer"
-    allowed_domains = ["transfermarkt.com"]
+    name: str = "footballer"
+    allowed_domains: List[str] = ["transfermarkt.com"]
     
     def __init__(self, start_url, **kwargs):
         super().__init__(**kwargs)
-        self.start_urls = [start_url]
-
+        self.start_urls: List[str] = [start_url]
 
     def parse(self, response):
         """
