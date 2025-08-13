@@ -6,7 +6,6 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-
 BOT_NAME = "footballers_scraper"
 MONGO_URI = "mongodb://localhost:27017"
 MONGO_DATABASE = "footballers"
