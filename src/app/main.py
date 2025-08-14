@@ -1,7 +1,6 @@
-import asyncio
+import asyncio, logging
 from twisted.internet import asyncioreactor
 asyncioreactor.install(asyncio.get_running_loop())
-import logging
 from fastapi import FastAPI
 from app.routes.scraping import router as scraping_router
 
