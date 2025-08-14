@@ -1,5 +1,4 @@
-import logging
-import pymongo
+import logging, pymongo
 from hashlib import sha256
 from scrapy.exceptions import DropItem
 from itemadapter import ItemAdapter

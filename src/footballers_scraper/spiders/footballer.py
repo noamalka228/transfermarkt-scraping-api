@@ -1,5 +1,4 @@
-import logging
-import scrapy
+import scrapy, logging
 from typing import List
 from footballers_scraper.items import FootballerItem
 
@@ -23,7 +22,7 @@ class FootballerSpider(scrapy.Spider):
         @returns request 1 50
         @scrapes name nationality market_value
         """
-        logger.info(f"Started Parsing Page")
+        logger.info("Started Parsing Page")
         players_css = response.css("tr.odd") + response.css("tr.even")
         for player in players_css:
             footballer = FootballerItem()

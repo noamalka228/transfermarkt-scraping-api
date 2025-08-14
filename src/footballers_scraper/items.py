@@ -12,4 +12,3 @@ class FootballerItem(scrapy.Item):
     name = scrapy.Field()
     nationality = scrapy.Field()
     market_value = scrapy.Field()
-    

@@ -1,5 +1,4 @@
-import logging
-import asyncio
+import logging, asyncio
 from fastapi import APIRouter, Query, status
 from app.services.scrapy_runner import run_spider
 

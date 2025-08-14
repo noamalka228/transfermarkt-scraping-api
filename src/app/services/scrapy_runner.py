@@ -13,10 +13,8 @@ runner = CrawlerRunner(get_project_settings())
 items: List[Dict] = []
 
 async def run_spider(start_url: str) -> List[Dict]:
-    logger.info("started waiting for deferred")
     dispatcher.connect(lambda item: items.append(dict(item)), signal=signals.item_scraped)
     deferred_data = runner.crawl(FootballerSpider, start_url=start_url)
     logger.info("started waiting for deferred")
     await deferred_data.asFuture(asyncio.get_running_loop())
-    logger.info(items)
     return items
